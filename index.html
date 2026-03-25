@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpacePro Furniture — Custom Furniture Built to Last</title>
+<meta name="description" content="SpacePro Furniture Pvt. Ltd. crafts custom home and office furniture backed by an unconditional 10-year warranty. Designed for you, built to endure.">
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+
+<!-- GSAP + Plugins -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Lenis Smooth Scroll -->
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+
+<!-- Splitting.js for text animation -->
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FurnitureStore",
+  "name": "SpacePro Furniture Pvt. Ltd.",
+  "description": "Custom home and office furniture with 10-year warranty",
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+
+<!-- Preloader -->
+<div id="preloader" style="position:fixed;inset:0;z-index:9999;background:var(--color-bg);display:flex;align-items:center;justify-content:center;">
+  <div style="text-align:center;">
+    <div class="nav-logo-text" style="font-size:1.5rem;opacity:0;" id="preloader-text">Space<span>Pro</span></div>
+    <div style="width:60px;height:2px;background:var(--color-divider);margin:var(--space-3) auto 0;border-radius:2px;overflow:hidden;">
+      <div id="preloader-bar" style="width:0%;height:100%;background:var(--color-primary);border-radius:2px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="nav-logo" aria-label="SpacePro Furniture home">
+      <div class="nav-logo-text">Space<span>Pro</span></div>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#gallery" class="nav-link">Work</a></li>
+      <li><a href="#process" class="nav-link">Process</a></li>
+      <li><a href="#warranty" class="nav-link">Warranty</a></li>
+      <li><a href="#testimonials" class="nav-link">Clients</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#contact" class="nav-cta desktop" data-magnetic>
+        <span>Get a Quote</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <a href="#gallery" onclick="closeMobile()">Work</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#warranty" onclick="closeMobile()">Warranty</a>
+  <a href="#testimonials" onclick="closeMobile()">Clients</a>
+  <a href="#contact" onclick="closeMobile()">Get a Quote</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="./assets/hero.png" alt="Modern living room with custom SpacePro furniture" width="1920" height="1080" id="heroBgImg">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-label" id="heroLabel">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          10-Year Unconditional Warranty
+        </div>
+        <h1 id="heroTitle">
+          <span class="line-wrap"><span class="line-inner">Furniture crafted</span></span>
+          <span class="line-wrap"><span class="line-inner"><em style="font-style:normal;color:var(--color-primary)">exactly</em> how</span></span>
+          <span class="line-wrap"><span class="line-inner">you want it.</span></span>
+        </h1>
+        <p class="hero-desc" id="heroDesc">Custom furniture for homes and offices — pieces that fit your space perfectly and stand the test of time.</p>
+        <div class="hero-actions" id="heroActions">
+          <a href="#contact" class="btn btn-primary" data-magnetic>
+            <span>Request a Quote</span>
+            <span class="btn-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#gallery" class="btn btn-outline">See Our Work</a>
+        </div>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div>
+          <div class="stat-value" data-count="1200" data-suffix="+">0</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div>
+          <div class="stat-value" data-count="10" data-suffix=" Yrs">0</div>
+          <div class="stat-label">Warranty</div>
+        </div>
+        <div>
+          <div class="stat-value" data-count="100" data-suffix="%">0</div>
+          <div class="stat-label">Custom</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item">Living Rooms <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Bedrooms <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Kitchens <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Offices <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Libraries <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Dining Rooms <span class="marquee-dot"></span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="marquee-item">Living Rooms <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Bedrooms <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Kitchens <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Offices <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Libraries <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Dining Rooms <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Built for every space</h2>
+        <p class="section-desc">Premium materials, precision craftsmanship, and an obsession with detail.</p>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item img-reveal">
+        <img src="./assets/product-living.png" alt="Custom entertainment wall unit" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Living Room</h3><p>Entertainment units and shelving</p></div>
+        </div>
+      </div>
+      <div class="gallery-item img-reveal">
+        <img src="./assets/product-office.png" alt="Executive office desk" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Office</h3><p>Desks, cabinets, workstations</p></div>
+        </div>
+      </div>
+      <div class="gallery-item img-reveal">
+        <img src="./assets/product-wardrobe.png" alt="Floor-to-ceiling wardrobe" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Bedroom</h3><p>Wardrobes, beds, dressers</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-row-2">
+      <div class="gallery-item img-reveal">
+        <img src="./assets/product-kitchen.png" alt="Modular kitchen" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Kitchen</h3><p>Modular kitchens</p></div>
+        </div>
+      </div>
+      <div class="gallery-item img-reveal">
+        <img src="./assets/product-dining.png" alt="Dining table set" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Dining</h3><p>Tables and seating</p></div>
+        </div>
+      </div>
+      <div class="gallery-item img-reveal">
+        <img src="./assets/product-bookshelf.png" alt="Library bookshelf" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Library</h3><p>Bookshelves and nooks</p></div>
+        </div>
+      </div>
+      <div class="gallery-item img-reveal">
+        <img src="./assets/hero.png" alt="Complete room setup" loading="lazy" decoding="async">
+        <div class="gallery-overlay">
+          <div class="gallery-meta"><h3>Full Room</h3><p>Complete interiors</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="section-header-row" style="justify-content:center;text-align:center;">
+      <div style="max-width:520px;">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">From vision to reality</h2>
+        <p class="section-desc" style="margin-inline:auto;">A transparent four-step process that keeps you in control.</p>
+      </div>
+    </div>
+    <div class="process-grid" id="processGrid">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <h3>Consult</h3>
+        <p>Share your ideas, space dimensions, and budget. We listen, measure, and understand your needs.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <h3>Design</h3>
+        <p>Detailed 3D renders so you see exactly what you'll get. Revise until it's perfect.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <h3>Build</h3>
+        <p>Skilled craftspeople build your furniture using premium materials. Quality checks at every stage.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">04</div>
+        <h3>Install</h3>
+        <p>Delivered and installed to perfection. Your 10-year warranty begins from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY -->
+<section class="warranty-section" id="warranty">
+  <div class="container">
+    <div class="warranty-inner">
+      <div class="warranty-big-number" id="warrantyNum">10</div>
+      <div class="warranty-text">
+        <h2>Year Warranty.<br>No Fine Print.</h2>
+        <p>Every piece we create comes with an unconditional 10-year warranty. Manufacturing defects, material issues, structural concerns — we fix it or replace it. That's our promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <span class="section-label">Client Stories</span>
+        <h2 class="section-title">Trusted by 1,200+ clients</h2>
+      </div>
+    </div>
+    <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"We furnished our entire 4,000 sq ft office with SpacePro. Every desk, every cabinet — custom-fit to perfection. Two years in and everything looks brand new."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">RP</div>
+          <div><div class="testimonial-name">Rajesh Patel</div><div class="testimonial-role">CEO, TechNova Solutions</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"The modular kitchen they built exceeded every expectation. The materials are top quality, the finish is flawless, and the warranty gives me complete peace of mind."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">SK</div>
+          <div><div class="testimonial-name">Sneha Kulkarni</div><div class="testimonial-role">Homeowner, Pune</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"I wanted floor-to-ceiling bookshelves with a built-in desk. SpacePro nailed it on the first design. Professional from start to finish."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">AM</div>
+          <div><div class="testimonial-name">Dr. Anand Mehta</div><div class="testimonial-role">Professor, IIT Mumbai</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"SpacePro delivered our complete bedroom set including wardrobes, bed frame, and side tables. The craftsmanship is remarkable and customer service is outstanding."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">PD</div>
+          <div><div class="testimonial-name">Priya Deshmukh</div><div class="testimonial-role">Interior Designer, Mumbai</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"Furnished our restaurant with custom dining sets. Great attention to detail, sturdy construction, and the 10-year warranty sealed the deal for us."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">VN</div>
+          <div><div class="testimonial-name">Vikram Naik</div><div class="testimonial-role">Owner, Saffron Kitchen</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-label">Get In Touch</span>
+        <h2>Let's build something extraordinary</h2>
+        <p>Tell us about your space. We'll get back within 24 hours with a free consultation plan.</p>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div><h4>Phone</h4><p>+91 98765 43210</p></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><h4>Email</h4><p>hello@spaceprofurniture.com</p></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><h4>Visit Us</h4><p>Dhule, Maharashtra, India</p></div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="+91 ...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="space">Space Type</label>
+            <select id="space">
+              <option value="">Select...</option>
+              <option>Home — Living Room</option>
+              <option>Home — Bedroom</option>
+              <option>Home — Kitchen</option>
+              <option>Home — Dining</option>
+              <option>Office — Executive</option>
+              <option>Office — Open Plan</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <select id="budget">
+              <option value="">Select...</option>
+              <option>Under ₹1 Lakh</option>
+              <option>₹1 — 3 Lakhs</option>
+              <option>₹3 — 5 Lakhs</option>
+              <option>₹5 — 10 Lakhs</option>
+              <option>₹10 Lakhs+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">About Your Project</label>
+          <textarea id="message" placeholder="Dimensions, materials, style preferences..."></textarea>
+        </div>
+        <button type="submit" class="form-submit"><span>Request Free Consultation</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-text" style="margin-bottom:var(--space-2);">Space<span>Pro</span></div>
+        <p>Custom furniture for homes and offices, backed by a 10-year unconditional warranty. Built in India, built to last.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Spaces</h4>
+        <ul role="list">
+          <li><a href="#gallery">Living Room</a></li>
+          <li><a href="#gallery">Bedroom</a></li>
+          <li><a href="#gallery">Kitchen</a></li>
+          <li><a href="#gallery">Office</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="#process">Process</a></li>
+          <li><a href="#warranty">Warranty</a></li>
+          <li><a href="#testimonials">Clients</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul role="list">
+          <li><a href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SpacePro Furniture Pvt. Ltd.</span>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== INIT ===== */
+gsap.registerPlugin(ScrollTrigger);
+
+/* ===== LENIS SMOOTH SCROLL ===== */
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -80 });
+    }
+  });
+});
+
+/* ===== DARK MODE ===== */
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  updateIcon();
+  t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    updateIcon();
+  });
+  function updateIcon() {
+    t.innerHTML = d === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+})();
+
+/* ===== CUSTOM CURSOR ===== */
+const cursor = document.getElementById('cursor');
+let cursorX = 0, cursorY = 0, targetX = 0, targetY = 0;
+
+if (window.matchMedia('(hover: hover)').matches) {
+  document.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    if (!cursor.classList.contains('visible')) cursor.classList.add('visible');
+  });
+
+  function updateCursor() {
+    cursorX += (targetX - cursorX) * 0.15;
+    cursorY += (targetY - cursorY) * 0.15;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    requestAnimationFrame(updateCursor);
+  }
+  updateCursor();
+
+  // Hover effect
+  document.querySelectorAll('a, button, .gallery-item, .process-card, .testimonial-card, input, select, textarea').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+}
+
+/* ===== MAGNETIC ELEMENTS ===== */
+document.querySelectorAll('[data-magnetic]').forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    gsap.to(el, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: 'power2.out' });
+  });
+  el.addEventListener('mouseleave', () => {
+    gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.5)' });
+  });
+});
+
+/* ===== HEADER SCROLL ===== */
+ScrollTrigger.create({
+  start: 80,
+  onUpdate: (self) => {
+    document.getElementById('header').classList.toggle('scrolled', self.progress > 0 || window.scrollY > 80);
+  }
+});
+
+/* ===== PRELOADER ===== */
+const preloaderTl = gsap.timeline();
+preloaderTl
+  .to('#preloader-text', { opacity: 1, duration: 0.4 })
+  .to('#preloader-bar', { width: '100%', duration: 1.2, ease: 'power2.inOut' })
+  .to('#preloader', { yPercent: -100, duration: 0.8, ease: 'power3.inOut', delay: 0.2 })
+  .set('#preloader', { display: 'none' })
+  .call(() => heroEntrance());
+
+/* ===== HERO ENTRANCE ===== */
+function heroEntrance() {
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  tl.to('.line-inner', {
+    y: 0,
+    duration: 1.2,
+    stagger: 0.08,
+  })
+  .to('#heroLabel', {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+  }, '-=0.7')
+  .to('#heroDesc', {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+  }, '-=0.5')
+  .to('#heroActions', {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+  }, '-=0.5')
+  .to('#heroStats', {
+    opacity: 1,
+    duration: 0.8,
+  }, '-=0.4')
+  .call(() => animateCounters(), null, '-=0.3');
+
+  // Set initial states
+  gsap.set('#heroLabel', { opacity: 0, y: 20 });
+}
+
+/* ===== HERO PARALLAX ===== */
+gsap.to('#heroBgImg', {
+  yPercent: 20,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '#hero',
+    start: 'top top',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+/* ===== NUMBER COUNT-UP ===== */
+function animateCounters() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const end = parseInt(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const obj = { val: 0 };
+    gsap.to(obj, {
+      val: end,
+      duration: end > 100 ? 2 : 1.2,
+      ease: 'power2.out',
+      onUpdate: () => {
+        const v = Math.round(obj.val);
+        el.textContent = (v >= 1000 ? v.toLocaleString() : v) + suffix;
+      }
+    });
+  });
+}
+
+/* ===== IMAGE REVEALS (Gallery) ===== */
+document.querySelectorAll('.img-reveal').forEach(el => {
+  gsap.fromTo(el, {
+    clipPath: 'inset(100% 0 0 0)',
+  }, {
+    clipPath: 'inset(0% 0 0 0)',
+    duration: 1.2,
+    ease: 'power3.inOut',
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 85%',
+      once: true,
+    },
+    onComplete: () => el.classList.add('revealed'),
+  });
+});
+
+/* ===== SECTION HEADERS ===== */
+document.querySelectorAll('.section-label, .section-title, .section-desc').forEach(el => {
+  gsap.from(el, {
+    y: 40,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 88%',
+      once: true,
+    }
+  });
+});
+
+/* ===== PROCESS CARDS STAGGER ===== */
+gsap.from('.process-card', {
+  y: 60,
+  opacity: 0,
+  duration: 0.8,
+  stagger: 0.12,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '#processGrid',
+    start: 'top 80%',
+    once: true,
+  }
+});
+
+/* ===== WARRANTY SECTION ===== */
+gsap.from('#warrantyNum', {
+  scale: 0.5,
+  opacity: 0,
+  duration: 1,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.warranty-section',
+    start: 'top 70%',
+    once: true,
+  }
+});
+gsap.from('.warranty-text', {
+  x: 60,
+  opacity: 0,
+  duration: 0.9,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.warranty-section',
+    start: 'top 70%',
+    once: true,
+  }
+});
+
+/* ===== TESTIMONIAL CARDS ===== */
+gsap.from('.testimonial-card', {
+  y: 40,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.1,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '#testimonialsTrack',
+    start: 'top 85%',
+    once: true,
+  }
+});
+
+/* ===== CONTACT SECTION ===== */
+gsap.from('.contact-info', {
+  x: -40,
+  opacity: 0,
+  duration: 0.9,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '#contact',
+    start: 'top 75%',
+    once: true,
+  }
+});
+gsap.from('.contact-form', {
+  x: 40,
+  opacity: 0,
+  duration: 0.9,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '#contact',
+    start: 'top 75%',
+    once: true,
+  }
+});
+
+/* ===== MOBILE MENU ===== */
+function closeMobile() {
+  document.getElementById('mobileOverlay').classList.remove('open');
+  document.getElementById('mobileToggle').classList.remove('active');
+  document.getElementById('mobileToggle').setAttribute('aria-expanded', 'false');
+  lenis.start();
+}
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.getElementById('mobileToggle');
+  const isOpen = overlay.classList.toggle('open');
+  btn.classList.toggle('active');
+  btn.setAttribute('aria-expanded', isOpen);
+  if (isOpen) lenis.stop(); else lenis.start();
+});
+
+/* ===== FORM ===== */
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit span');
+  const btnEl = e.target.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btnEl.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Thank you! We\'ll be in touch.';
+    btnEl.style.background = '#2d7a3a';
+    setTimeout(() => {
+      btn.textContent = 'Request Free Consultation';
+      btnEl.style.background = '';
+      btnEl.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }, 1200);
+}
+
+/* ===== FORM INPUT ANIMATIONS ===== */
+document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(input => {
+  input.addEventListener('focus', () => {
+    gsap.to(input, { scale: 1.01, duration: 0.3, ease: 'power2.out' });
+  });
+  input.addEventListener('blur', () => {
+    gsap.to(input, { scale: 1, duration: 0.3, ease: 'power2.out' });
+  });
+});
+</script>
+
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>
