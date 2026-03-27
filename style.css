@@ -133,11 +133,6 @@ img {
   }
 }
 
-.js .reveal,
-.js .hero-title-inner {
-  opacity: 0;
-}
-
 .site-header {
   position: fixed;
   top: 0;
@@ -295,6 +290,10 @@ img {
   justify-content: center;
   gap: 2rem;
   background: var(--bg);
+}
+
+.mobile-menu[hidden] {
+  display: none;
 }
 
 .mobile-menu a {
